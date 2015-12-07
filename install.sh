@@ -1,6 +1,6 @@
 #!/bin/bash
 
-function update_caceh() {
+function update_cache() {
 	echo "update apt cache"
 	apt-get update
 }
@@ -18,11 +18,11 @@ function install_apps() {
 echo "INSTALLING ESSENTIALS"
 
 list=(	git-core
-		curl
-		wget
-		vim
-		zsh
-		build-essential)
+	curl
+	wget
+	vim
+	zsh
+	build-essential)
 
 for i in "${list[@]}"
 do
@@ -37,7 +37,7 @@ echo "Finish Essential apps"
 
 function install_oh_my_zsh() {
 
-dir = eval echo"/home/$USER"
+dir = eval echo"/home/$SUDO_USER"
 cd $dir
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 }
